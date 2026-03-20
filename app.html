@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Experience — NEURA</title>
+  <meta name="description"
+    content="Explore the NEURA app — 8 interactive screens from device pairing to meditation, sleep tracking, and weekly analytics.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">NEURA<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Device</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="app.html" class="active">App</a>
+      <a href="app2.html">Manual Entry</a>
+      <a href="specs.html">Specs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <a href="pricing.html" class="nav-cta">Pre-order Now</a>
+  </nav>
+
+  <!-- spacer for fixed nav -->
+  <div style="height:80px"></div>
+
+  <!-- APP WALKTHROUGH -->
+  <section class="app-section" id="app">
+    <div>
+      <span class="section-label">App Experience</span>
+      <h2 class="section-title">Everything you need,<br>on your phone.</h2>
+      <p class="section-sub">100% offline. Zero cloud. Your brain data stays on your device — always.</p>
+      <div class="app-steps-list">
+        <button class="app-step-btn active" onclick="setScreen(0,this)">
+          <div class="step-circle">1</div>
+          <div class="app-step-text">
+            <h4>Pair Your Device</h4>
+            <p>One-tap BLE pairing. NEURA appears automatically when in range.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(1,this)">
+          <div class="step-circle">2</div>
+          <div class="app-step-text">
+            <h4>30-Second Calibration</h4>
+            <p>Sit still for 30s. The app builds your personal EEG baseline.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(2,this)">
+          <div class="step-circle">3</div>
+          <div class="app-step-text">
+            <h4>Live Dashboard</h4>
+            <p>Real-time focus score, band power levels, and instant state alerts.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(3,this)">
+          <div class="step-circle">4</div>
+          <div class="app-step-text">
+            <h4>Active Focus Session</h4>
+            <p>Timer, focus timeline, and adaptive binaural soundscapes.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(4,this)">
+          <div class="step-circle">5</div>
+          <div class="app-step-text">
+            <h4>Session Report</h4>
+            <p>Deep-focus %, peak moments, and AI-generated productivity insights.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(5,this)">
+          <div class="step-circle">6</div>
+          <div class="app-step-text">
+            <h4>Meditation Mode</h4>
+            <p>Guided breathing with real-time zen score and stress detection.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(6,this)">
+          <div class="step-circle">7</div>
+          <div class="app-step-text">
+            <h4>Sleep Tracking</h4>
+            <p>Overnight EEG analysis — deep sleep, REM, and sleep quality score.</p>
+          </div>
+        </button>
+        <button class="app-step-btn" onclick="setScreen(7,this)">
+          <div class="step-circle">8</div>
+          <div class="app-step-text">
+            <h4>History &amp; Analytics</h4>
+            <p>Weekly trends, streak tracking, and best focus time insights.</p>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- PHONE -->
+    <div class="phone-wrap">
+      <div class="phone-outer">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+
+          <!-- Screen 1: Connect -->
+          <div class="screen-view active" id="sv-0">
+            <div class="s1-top">
+              <div class="s1-device-icon">🧠</div>
+              <div class="s1-title">Connect NEURA</div>
+              <div class="s1-sub">Make sure the device is charged and worn</div>
+            </div>
+            <div class="s1-scan-ring">
+              <div style="font-size:26px;">📡</div>
+            </div>
+            <div class="s1-found-chip">
+              <div class="chip-dot"></div>
+              <div>
+                <span>NEURA-7A3F</span>
+                <small>Signal strength: Excellent · 4m range</small>
+              </div>
+            </div>
+            <button class="s1-connect-btn" onclick="connectDevice(this)">Connect Device</button>
+          </div>
+
+          <!-- Screen 2: Calibrate -->
+          <div class="screen-view" id="sv-1">
+            <div class="s2-header">
+              <h3>Calibrating…</h3>
+              <span class="s2-badge">● LIVE</span>
+            </div>
+            <div class="wave-viz">
+              <svg class="wave-svg" viewBox="0 0 200 60" preserveAspectRatio="none">
+                <path
+                  d="M0,30 C10,10 20,50 30,30 C40,10 50,50 60,30 C70,10 80,50 90,30 C100,10 110,50 120,30 C130,10 140,50 150,30 C160,10 170,50 180,30 C190,10 200,30 200,30"
+                  fill="none" stroke="#2E86FF" stroke-width="2" class="wave-path" />
+                <path d="M0,30 C10,15 20,45 30,30 C40,18 50,42 60,30 C70,20 80,40 90,30 C100,22 110,38 120,30"
+                  fill="none" stroke="rgba(46,134,255,0.3)" stroke-width="1.5" class="wave-path"
+                  style="animation-delay:.5s" />
+              </svg>
+            </div>
+            <div class="band-bars">
+              <div class="band-bar band-alpha">
+                <div class="band-name">Alpha</div>
+                <div class="band-val" id="cal-a">35</div>
+              </div>
+              <div class="band-bar band-beta">
+                <div class="band-name">Beta</div>
+                <div class="band-val" id="cal-b">52</div>
+              </div>
+              <div class="band-bar band-theta">
+                <div class="band-name">Theta</div>
+                <div class="band-val" id="cal-t">28</div>
+              </div>
+            </div>
+            <div class="cal-progress">
+              <div class="cal-label"><span>Establishing baseline</span><span id="cal-pct">0%</span></div>
+              <div class="cal-bar">
+                <div class="cal-fill" id="cal-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 3: Dashboard -->
+          <div class="screen-view" id="sv-2">
+            <div class="s3-greeting">Good morning,</div>
+            <div class="s3-name">Abhishek 👋</div>
+            <div class="score-ring-wrap">
+              <svg class="score-svg" viewBox="0 0 110 110">
+                <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8" />
+                <circle cx="55" cy="55" r="44" fill="none" stroke="url(#scoreGrad)" stroke-width="8"
+                  stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="55.3"
+                  transform="rotate(-90 55 55)" />
+                <defs>
+                  <linearGradient id="scoreGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#2E86FF" />
+                    <stop offset="100%" stop-color="#00C48C" />
+                  </linearGradient>
+                </defs>
+                <text x="55" y="50" text-anchor="middle" fill="white" font-size="22" font-weight="700"
+                  font-family="Space Mono,monospace">82</text>
+                <text x="55" y="64" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9"
+                  font-family="DM Sans,sans-serif">FOCUS SCORE</text>
+              </svg>
+            </div>
+            <div class="band-row">
+              <div class="band-pill">
+                <div class="bp-name">Alpha</div>
+                <div class="bp-val" style="color:#64B5F6">35μV</div>
+              </div>
+              <div class="band-pill">
+                <div class="bp-name">Beta</div>
+                <div class="bp-val" style="color:#81C784">52μV</div>
+              </div>
+              <div class="band-pill">
+                <div class="bp-name">Theta</div>
+                <div class="bp-val" style="color:#FFB74D">28μV</div>
+              </div>
+            </div>
+            <div class="alert-strip">
+              <div class="alert-icon">🟢</div>
+              <div class="alert-text"><strong style="color:white">Deep Focus</strong> — You're in the zone. Beta
+                dominance detected. Keep going.</div>
+            </div>
+          </div>
+
+          <!-- Screen 4: Session -->
+          <div class="screen-view" id="sv-3">
+            <div class="s4-session-header">
+              <h3>Focus Session</h3>
+              <span>Started 14 min ago</span>
+            </div>
+            <div class="session-timer" id="sess-timer">00:14:32</div>
+            <div class="focus-timeline">
+              <div class="ft-label">Focus Timeline</div>
+              <div class="ft-chart" id="ft-chart"></div>
+            </div>
+            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-bottom:10px;text-align:right;">Deep Focus: 68%
+              of session</div>
+            <div class="sound-row">
+              <div class="sound-chip active" onclick="toggleSound(this)">
+                <div class="sc-icon">🌊</div>
+                <div class="sc-label">Ocean</div>
+              </div>
+              <div class="sound-chip" onclick="toggleSound(this)">
+                <div class="sc-icon">🌧️</div>
+                <div class="sc-label">Rain</div>
+              </div>
+              <div class="sound-chip" onclick="toggleSound(this)">
+                <div class="sc-icon">🔕</div>
+                <div class="sc-label">Silent</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 5: Report -->
+          <div class="screen-view" id="sv-4">
+            <div class="s5-back" style="cursor:pointer"
+              onclick="var b=document.querySelectorAll('.app-step-btn');setScreen(2,b[2])">← Sessions</div>
+            <div class="s5-session-info">
+              <h3>Today's Report</h3>
+              <span>45 min · 2:30PM · Pomodoro mode</span>
+            </div>
+            <div class="report-stats">
+              <div class="r-stat">
+                <div class="rs-val">82</div>
+                <div class="rs-label">Avg Focus Score</div>
+              </div>
+              <div class="r-stat">
+                <div class="rs-val">68%</div>
+                <div class="rs-label">Deep Focus Time</div>
+              </div>
+              <div class="r-stat">
+                <div class="rs-val">3</div>
+                <div class="rs-label">Alerts Triggered</div>
+              </div>
+              <div class="r-stat">
+                <div class="rs-val">↑12</div>
+                <div class="rs-label">vs Yesterday</div>
+              </div>
+            </div>
+            <div class="insight-chip">
+              <div>💡</div>
+              <span>Your peak focus was between 2:38–2:52 PM. Beta was 40% above your baseline. Schedule deep work in
+                this window tomorrow.</span>
+            </div>
+          </div>
+
+          <!-- Screen 6: Meditation -->
+          <div class="screen-view" id="sv-5">
+            <div class="s6-header">
+              <h3>🧘 Meditation</h3>
+              <span>Breathe with your brain</span>
+            </div>
+            <div class="breathe-wrap">
+              <div class="breathe-ring">
+                <div class="breathe-inner">
+                  <div class="breathe-label">Breathe</div>
+                  <div class="breathe-text" id="breathe-phase">Inhale…</div>
+                </div>
+              </div>
+            </div>
+            <div class="zen-score-row">
+              <div class="zen-card">
+                <div class="zc-label">Zen Score</div>
+                <div class="zc-val" style="color:#00C48C" id="zen-val">74</div>
+              </div>
+              <div class="zen-card">
+                <div class="zc-label">Stress</div>
+                <div class="zc-val" style="color:#FF7043" id="stress-val">Low</div>
+              </div>
+              <div class="zen-card">
+                <div class="zc-label">Heart</div>
+                <div class="zc-val" style="color:#E040FB">68</div>
+              </div>
+            </div>
+            <div class="duration-row">
+              <div class="dur-chip" onclick="toggleDur(this)"><span>5m</span></div>
+              <div class="dur-chip active" onclick="toggleDur(this)"><span>10m</span></div>
+              <div class="dur-chip" onclick="toggleDur(this)"><span>15m</span></div>
+            </div>
+            <div class="med-state-strip">
+              <div class="ms-icon">🟢</div>
+              <div class="ms-text"><strong style="color:white">Calm</strong> — Alpha dominance detected. Breathing is
+                steady.</div>
+            </div>
+          </div>
+
+          <!-- Screen 7: Sleep Tracking -->
+          <div class="screen-view" id="sv-6">
+            <div class="s7-header">
+              <h3>😴 Sleep Analysis</h3>
+              <span>Last night · 7h 24m total</span>
+            </div>
+            <div class="sleep-score-wrap">
+              <svg class="sleep-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="7" />
+                <circle cx="50" cy="50" r="40" fill="none" stroke="url(#sleepGrad)" stroke-width="7"
+                  stroke-linecap="round" stroke-dasharray="251.33" stroke-dashoffset="50.27"
+                  transform="rotate(-90 50 50)" />
+                <defs>
+                  <linearGradient id="sleepGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#7C4DFF" />
+                    <stop offset="100%" stop-color="#00C48C" />
+                  </linearGradient>
+                </defs>
+                <text x="50" y="46" text-anchor="middle" fill="white" font-size="20" font-weight="700"
+                  font-family="Space Mono,monospace">80</text>
+                <text x="50" y="58" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8"
+                  font-family="DM Sans,sans-serif">SLEEP SCORE</text>
+              </svg>
+            </div>
+            <div class="sleep-stages" id="sleep-stages">
+              <div class="sleep-stage">
+                <div class="ss-color" style="background:#7C4DFF"></div>
+                <div class="ss-info">
+                  <div class="ss-name">Deep Sleep</div>
+                  <div class="ss-bar-wrap">
+                    <div class="ss-bar-fill" style="width:0%;background:#7C4DFF" data-w="38%"></div>
+                  </div>
+                </div>
+                <div class="ss-val">2h 48m</div>
+              </div>
+              <div class="sleep-stage">
+                <div class="ss-color" style="background:#42A5F5"></div>
+                <div class="ss-info">
+                  <div class="ss-name">REM</div>
+                  <div class="ss-bar-wrap">
+                    <div class="ss-bar-fill" style="width:0%;background:#42A5F5" data-w="28%"></div>
+                  </div>
+                </div>
+                <div class="ss-val">2h 04m</div>
+              </div>
+              <div class="sleep-stage">
+                <div class="ss-color" style="background:#66BB6A"></div>
+                <div class="ss-info">
+                  <div class="ss-name">Light Sleep</div>
+                  <div class="ss-bar-wrap">
+                    <div class="ss-bar-fill" style="width:0%;background:#66BB6A" data-w="34%"></div>
+                  </div>
+                </div>
+                <div class="ss-val">2h 32m</div>
+              </div>
+            </div>
+            <div class="sleep-stats">
+              <div class="sl-stat">
+                <div class="sl-val">11:42pm</div>
+                <div class="sl-label">Fell Asleep</div>
+              </div>
+              <div class="sl-stat">
+                <div class="sl-val">7:06am</div>
+                <div class="sl-label">Woke Up</div>
+              </div>
+              <div class="sl-stat">
+                <div class="sl-val">12min</div>
+                <div class="sl-label">Time to Sleep</div>
+              </div>
+              <div class="sl-stat">
+                <div class="sl-val">1</div>
+                <div class="sl-label">Awakenings</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 8: History -->
+          <div class="screen-view" id="sv-7">
+            <div class="s8-header">
+              <h3>📊 Weekly Analytics</h3>
+              <span>Mar 14 – Mar 20, 2026</span>
+            </div>
+            <div class="streak-badge">🔥 7-day streak</div>
+            <div class="week-chart">
+              <div class="wc-label">Daily Focus Score</div>
+              <div class="wc-bars" id="wc-bars"></div>
+            </div>
+            <div class="hist-stats">
+              <div class="h-stat">
+                <div class="hs-val">76</div>
+                <div class="hs-label">Weekly Avg</div>
+              </div>
+              <div class="h-stat">
+                <div class="hs-val">↑8</div>
+                <div class="hs-label">vs Last Week</div>
+              </div>
+              <div class="h-stat">
+                <div class="hs-val">4h 12m</div>
+                <div class="hs-label">Total Focus</div>
+              </div>
+              <div class="h-stat">
+                <div class="hs-val">12</div>
+                <div class="hs-label">Sessions</div>
+              </div>
+            </div>
+            <div class="best-time-chip">
+              <div class="bt-icon">⚡</div>
+              <div class="bt-text"><strong style="color:white">Peak window:</strong> 2:00–4:00 PM. You focus 34% better
+                in the afternoon.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-0" onclick="setScreenByDot(0)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-1" onclick="setScreenByDot(1)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-2" onclick="setScreenByDot(2)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-3" onclick="setScreenByDot(3)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-4" onclick="setScreenByDot(4)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-5" onclick="setScreenByDot(5)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-6" onclick="setScreenByDot(6)"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"
+          class="phone-dot" id="pd-7" onclick="setScreenByDot(7)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">NEURA<span>.</span></div>
+    <p>© 2025 NEURA Technologies · Nagpur, India</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.3)">Built for focus. Priced for India.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

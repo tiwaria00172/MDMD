@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Entry — NEURA</title>
+  <meta name="description"
+    content="Manually enter Alpha, Beta, and Theta brainwave values to calculate your focus score using NEURA's formula.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">NEURA<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Device</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="app.html">App</a>
+      <a href="app2.html" class="active">Manual Entry</a>
+      <a href="specs.html">Specs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <a href="pricing.html" class="nav-cta">Pre-order Now</a>
+  </nav>
+
+  <!-- MANUAL ENTRY -->
+  <section class="manual-entry-section">
+    <span class="section-label">Manual Entry</span>
+    <h2 class="section-title">Enter your EEG data,<br>see your focus score.</h2>
+    <p class="section-sub">Adjust Alpha, Beta, and Theta power values to simulate NEURA's focus calculation algorithm.
+    </p>
+
+    <div class="manual-grid">
+
+      <!-- INPUT PANEL -->
+      <div class="input-panel reveal">
+        <h3>🧠 Brainwave Power Input</h3>
+
+        <!-- Alpha -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Alpha (8–12 Hz) — Relaxation</span>
+            <span class="sl-value alpha" id="alpha-display">35μV</span>
+          </div>
+          <input type="range" id="alpha-slider" class="alpha-slider" min="0" max="100" value="35"
+            oninput="updateSliderValue('alpha-slider','alpha-display');calculateFocusScore()">
+        </div>
+
+        <!-- Beta -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Beta (12–30 Hz) — Focus</span>
+            <span class="sl-value beta" id="beta-display">52μV</span>
+          </div>
+          <input type="range" id="beta-slider" class="beta-slider" min="0" max="100" value="52"
+            oninput="updateSliderValue('beta-slider','beta-display');calculateFocusScore()">
+        </div>
+
+        <!-- Theta -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Theta (4–8 Hz) — Drowsiness</span>
+            <span class="sl-value theta" id="theta-display">28μV</span>
+          </div>
+          <input type="range" id="theta-slider" class="theta-slider" min="0" max="100" value="28"
+            oninput="updateSliderValue('theta-slider','theta-display');calculateFocusScore()">
+        </div>
+
+        <button class="calculate-btn" onclick="calculateFocusScore()">⚡ Recalculate Focus Score</button>
+      </div>
+
+      <!-- RESULT PANEL -->
+      <div class="result-panel">
+        <!-- Gauge -->
+        <div class="focus-gauge reveal">
+          <div class="gauge-label">Calculated Focus Score</div>
+          <svg class="gauge-svg" viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="10" />
+            <circle cx="90" cy="90" r="70" fill="none" stroke="#2E86FF" stroke-width="10" stroke-linecap="round"
+              stroke-dasharray="439.82" stroke-dashoffset="114" transform="rotate(-90 90 90)" id="gauge-circle"
+              style="transition:stroke-dashoffset .6s ease, stroke .4s ease;" />
+            <text x="90" y="82" text-anchor="middle" fill="white" font-size="38" font-weight="700"
+              font-family="Space Mono,monospace" id="gauge-score">83</text>
+            <text x="90" y="104" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="10"
+              font-family="DM Sans,sans-serif" id="gauge-state">Deep Focus</text>
+          </svg>
+          <div class="gauge-formula">Score = β ÷ (α + θ) × 100</div>
+        </div>
+
+        <!-- State -->
+        <div class="state-indicator focused" id="state-indicator">
+          <div class="si-icon">🟢</div>
+          <div class="si-text">
+            <h4>Deep Focus</h4>
+            <p>Beta dominance detected. Your brain is in a highly focused state — ideal for deep work.</p>
+          </div>
+        </div>
+
+        <!-- Detail cards -->
+        <div class="result-details">
+          <div class="rd-card">
+            <div class="rd-val" id="rd-alpha">35μV</div>
+            <div class="rd-label">Alpha Power</div>
+          </div>
+          <div class="rd-card">
+            <div class="rd-val" id="rd-beta">52μV</div>
+            <div class="rd-label">Beta Power</div>
+          </div>
+          <div class="rd-card">
+            <div class="rd-val" id="rd-theta">28μV</div>
+            <div class="rd-label">Theta Power</div>
+          </div>
+          <div class="rd-card">
+            <div class="rd-val" id="rd-ratio">0.83</div>
+            <div class="rd-label">β/(α+θ) Ratio</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">NEURA<span>.</span></div>
+    <p>© 2025 NEURA Technologies · Nagpur, India</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.3)">Built for focus. Priced for India.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      calculateFocusScore();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Specs — NEURA</title>
+  <meta name="description"
+    content="NEURA technical specifications — ADS1299 EEG, ESP32 BLE, 3 dry electrodes, 24-bit ADC, on-device ML, and 14–18h battery life.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">NEURA<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Device</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="app.html">App</a>
+      <a href="app2.html">Manual Entry</a>
+      <a href="specs.html" class="active">Specs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <a href="pricing.html" class="nav-cta">Pre-order Now</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="section-label">Technical Specs</span>
+    <h1 class="section-title" style="font-size:clamp(36px,5vw,56px);">Built for precision.<br>Priced for everyone.</h1>
+  </div>
+
+  <!-- SPECS -->
+  <section class="specs-section" id="specs">
+    <div class="specs-grid">
+      <div class="spec-card reveal">
+        <div class="spec-icon">🔬</div>
+        <h3>Hardware</h3>
+        <div class="spec-item"><span class="spec-key">EEG Chip</span><span class="spec-val">ADS1299</span></div>
+        <div class="spec-item"><span class="spec-key">Channels</span><span class="spec-val">3 (Fp1, Fp2, Ref)</span>
+        </div>
+        <div class="spec-item"><span class="spec-key">Electrodes</span><span class="spec-val">Ag/AgCl dry</span></div>
+        <div class="spec-item"><span class="spec-key">MCU</span><span class="spec-val">ESP32 BLE 5.0</span></div>
+        <div class="spec-item"><span class="spec-key">Battery</span><span class="spec-val">1200mAh Li-ion</span></div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-icon">📡</div>
+        <h3>Signal</h3>
+        <div class="spec-item"><span class="spec-key">Sample Rate</span><span class="spec-val">256 Hz</span></div>
+        <div class="spec-item"><span class="spec-key">Resolution</span><span class="spec-val">24-bit ADC</span></div>
+        <div class="spec-item"><span class="spec-key">Band-pass</span><span class="spec-val">0.5 – 40 Hz</span></div>
+        <div class="spec-item"><span class="spec-key">FFT Window</span><span class="spec-val">256pt Hanning</span></div>
+        <div class="spec-item"><span class="spec-key">BLE Packet</span><span class="spec-val">20B @ 50ms</span></div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-icon">🤖</div>
+        <h3>Intelligence</h3>
+        <div class="spec-item"><span class="spec-key">Model</span><span class="spec-val">RF + LogReg</span></div>
+        <div class="spec-item"><span class="spec-key">Inference</span><span class="spec-val">&lt;10ms on-device</span>
+        </div>
+        <div class="spec-item"><span class="spec-key">States</span><span class="spec-val">4-class</span></div>
+        <div class="spec-item"><span class="spec-key">Accuracy</span><span class="spec-val">65–78%</span></div>
+        <div class="spec-item"><span class="spec-key">Connectivity</span><span class="spec-val">Offline only</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">NEURA<span>.</span></div>
+    <p>© 2025 NEURA Technologies · Nagpur, India</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.3)">Built for focus. Priced for India.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

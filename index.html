@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEURA — Smart Brainwave Headband</title>
+  <meta name="description"
+    content="NEURA reads your brainwaves in real time, detects cognitive drift before you feel it, and guides you back — silently, intelligently.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">NEURA<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Device</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="app.html">App</a>
+      <a href="app2.html">Manual Entry</a>
+      <a href="specs.html">Specs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <a href="pricing.html" class="nav-cta">Pre-order Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="device">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>EEG-Powered Focus Tracking</div>
+      <h1>Your brain<br>knows when you<br><em>stop focusing.</em></h1>
+      <p>NEURA reads your brainwaves in real time, detects cognitive drift before you feel it, and guides you back —
+        silently, intelligently.</p>
+      <div class="hero-btns">
+        <a href="#device" class="btn-primary">▶ See 3D Device</a>
+        <a href="app.html" class="btn-outline">📱 App Walkthrough</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">EEG Electrodes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">18h</span>
+          <span class="stat-label">Battery Life</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">256Hz</span>
+          <span class="stat-label">Sample Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">₹9,999</span>
+          <span class="stat-label">Starting Price</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;">
+      <div id="canvas-wrap">
+        <canvas id="three-canvas"></canvas>
+        <button class="canvas-maximize-btn" onclick="toggle3DFullscreen()" title="Maximize 3D View">⛶</button>
+        <div class="canvas-hint">Drag to rotate · Scroll to zoom</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <span class="section-label">Product Views</span>
+    <h2 class="section-title reveal">See every angle.</h2>
+    <p class="section-sub reveal">Explore the NEURA headband from all perspectives.</p>
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <img src="img/front.png" alt="NEURA Pro-Ergo front view" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Frontal Sensor Array</h4>
+          <p>3 spring-loaded Ag/AgCl pin electrodes on a TPE bridge, sport-mesh band</p>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <img src="img/side.png" alt="NEURA Brain Pod side view" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Brain Pod — Right Temple</h4>
+          <p>Pebble-shaped module with LED light pipe, USB-C, and snap-fit cradle</p>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <img src="img/angle.png" alt="NEURA Pro-Ergo full perspective" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Full Perspective</h4>
+          <p>Brain Pod, battery counterweight, magnetic clasp, and blue accent trim</p>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <img src="img/bottom.png" alt="NEURA electrode close-up" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Electrode Close-Up</h4>
+          <p>Spring-loaded pins with haptic motor — Fp1, Fpz, and Fp2 positions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">NEURA<span>.</span></div>
+    <p>© 2025 NEURA Technologies · Nagpur, India</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.3)">Built for focus. Priced for India.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

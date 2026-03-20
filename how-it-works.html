@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — NEURA</title>
+  <meta name="description"
+    content="Eight steps from brain to insight. Learn how NEURA captures and processes EEG signals to deliver real-time focus tracking.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">NEURA<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Device</a>
+      <a href="how-it-works.html" class="active">How It Works</a>
+      <a href="app.html">App</a>
+      <a href="app2.html">Manual Entry</a>
+      <a href="specs.html">Specs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <a href="pricing.html" class="nav-cta">Pre-order Now</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="section-label">The Science</span>
+    <h1 class="section-title" style="font-size:clamp(36px,5vw,56px);">Eight steps from<br>brain to insight</h1>
+    <p class="section-sub">Every second, NEURA runs a complete pipeline from raw neuron signals to a focus score on your
+      screen.</p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <span class="step-num">01 —</span>
+        <div class="step-icon">🎧</div>
+        <h3>Wear the Headband</h3>
+        <p>Dry Ag/AgCl electrodes at Fp1, Fp2, and reference positions make contact with the forehead. No gel needed.
+        </p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">02 —</span>
+        <div class="step-icon">⚡</div>
+        <h3>EEG Acquisition</h3>
+        <p>ADS1299 samples at 256 Hz, capturing microvolt-level neural oscillations across Alpha, Beta, and Theta bands.
+        </p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">03 —</span>
+        <div class="step-icon">📡</div>
+        <h3>BLE Transmission</h3>
+        <p>ESP32 transmits 20-byte packets every 50ms via BLE GATT Notify (UUID 0xFFE1) to your phone. No internet
+          needed.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">04 —</span>
+        <div class="step-icon">🔍</div>
+        <h3>Signal Filtering</h3>
+        <p>Band-pass 0.5–40 Hz removes drift and muscle noise. Notch filter at 50 Hz eliminates powerline interference.
+        </p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">05 —</span>
+        <div class="step-icon">📊</div>
+        <h3>FFT Analysis</h3>
+        <p>256-point Hanning-windowed FFT extracts Alpha (8–12 Hz), Beta (12–30 Hz), and Theta (4–8 Hz) power spectral
+          density.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">06 —</span>
+        <div class="step-icon">🤖</div>
+        <h3>ML Classification</h3>
+        <p>Hybrid Random Forest + Logistic Regression model classifies cognitive state: Focused, Moderate, Distracted,
+          or Relaxed.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">07 —</span>
+        <div class="step-icon">🎯</div>
+        <h3>Focus Score</h3>
+        <p>Score = β ÷ (α + θ) × 100. Updated every 500ms. Compared against your personal baseline for relative
+          accuracy.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">08 —</span>
+        <div class="step-icon">🔔</div>
+        <h3>Smart Feedback</h3>
+        <p>If focus drops below threshold: haptic vibration + adaptive soundscape triggers. No screen interruption.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">NEURA<span>.</span></div>
+    <p>© 2025 NEURA Technologies · Nagpur, India</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.3)">Built for focus. Priced for India.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
